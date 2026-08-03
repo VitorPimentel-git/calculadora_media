@@ -22,6 +22,28 @@ Desenvolver uma aplicação Flutter capaz de receber o nome e três notas de um 
 - Validação de campos
 - SnackBar
 
+### Criar o Projeto Flutter
+
+Abra o terminal e execute:
+```bash
+flutter create media_escolar
+```
+
+Entre na pasta do projeto:
+```bash
+cd media_escolar
+```
+
+Abra o projeto no Visual Studio Code:
+```bash
+code .
+```
+
+Execute o projeto:
+```bash
+flutter run
+```
+
 ### CheckList
 
 - [X] Criar o Projeto Flutter
