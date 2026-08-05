@@ -33,6 +33,7 @@ class _MediaEscolarPageState extends State<MediaEscolarPage> {
   final TextEditingController nota1Controller = TextEditingController();
   final TextEditingController nota2Controller = TextEditingController();
   final TextEditingController nota3Controller = TextEditingController();
+  final TextEditingController nota4Controller = TextEditingController();
 
   String nomeAluno = '';
   String situacao = '';
@@ -51,17 +52,21 @@ class _MediaEscolarPageState extends State<MediaEscolarPage> {
       nota3Controller.text.replaceAll(',', '.')
     );
 
-    if (nome.isEmpty || nota1 == null || nota2 == null || nota3 == null) {
+    double? nota4 = double.tryParse(
+      nota4Controller.text.replaceAll(',', '.')
+    );
+
+    if (nome.isEmpty || nota1 == null || nota2 == null || nota3 == null || nota4 == null) {
       mostrarMensagem("Preencha todos os campos corretamente");
       return;
     }
 
-    if(nota1 < 0 || nota1 > 10 || nota2 < 0 || nota2 > 10 || nota3 < 0 || nota3 > 10) {
+    if(nota1 < 0 || nota1 > 10 || nota2 < 0 || nota2 > 10 || nota3 < 0 || nota3 > 10 || nota4 < 0 || nota4 > 10) {
       mostrarMensagem("As notas devem estar entre 0 e 10");
       return;
     }
 
-    double mediaCalculada = (nota1 + nota2 + nota3) / 3;
+    double mediaCalculada = (nota1 + nota2 + nota3 + nota4) / 4;
     
     String situacaoCalculada;
 
@@ -93,7 +98,7 @@ class _MediaEscolarPageState extends State<MediaEscolarPage> {
       nota1Controller.clear();
       nota2Controller.clear();
       nota3Controller.clear();
-
+      nota4Controller.clear();
       setState(() {
         nomeAluno = '';
         media = 0;
@@ -134,7 +139,7 @@ class _MediaEscolarPageState extends State<MediaEscolarPage> {
             const SizedBox(height: 5),
 
             const Text(
-              'Digite o nome  e as três notas do aluno',
+              'Digite o nome  e as quatro notas do aluno',
               textAlign: TextAlign.center,
             ),
 
@@ -189,6 +194,21 @@ class _MediaEscolarPageState extends State<MediaEscolarPage> {
               ),
               decoration: const InputDecoration(
                 labelText: 'Nota 3',
+                hintText: 'Digite uma nota de 0 a 10',
+                prefixIcon: Icon(Icons.edit),
+                border: OutlineInputBorder(),
+              ),
+            ),
+
+            const SizedBox(height: 15),
+
+            TextField(
+              controller: nota4Controller,
+              keyboardType: const TextInputType.numberWithOptions(
+                decimal: true,
+              ),
+              decoration: const InputDecoration(
+                labelText: 'Nota 4',
                 hintText: 'Digite uma nota de 0 a 10',
                 prefixIcon: Icon(Icons.edit),
                 border: OutlineInputBorder(),
