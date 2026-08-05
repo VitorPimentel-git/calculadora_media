@@ -47,13 +47,20 @@ flutter run
 ### CheckList
 
 - [X] Criar o Projeto Flutter
-- [ ] Criar o campo de nome
-- [ ] Criar os três campos de nota
-- [ ] Criar o botão Calcular
-- [ ] Calcular Média
-- [ ] Verificar a situação do aluno
-- [ ] Mostrar o resultado
-- [ ] Criar o botão Limpar
-- [ ] Validar notas entre 0 e 10
-- [ ] Testar o aplicativo
+- [X] Criar o campo de nome
+- [X] Criar os três campos de nota
+- [X] Criar o botão Calcular
+- [X] Calcular Média
+- [X] Verificar a situação do aluno
+- [X] Mostrar o resultado
+- [X] Criar o botão Limpar
+- [X] Validar notas entre 0 e 10
+- [X] Testar o aplicativo
 
+### Desafio 
+
+- [ ] Adicionar uma quarta nota
+- [ ] Mostrar a maior nota
+- [ ] Mostrar a menor nota
+- [ ] Informar quantos pontos faltaram para a aprovação
+- [ ] Reprovar o aluno que tiver uma frequência menor que 75% 
