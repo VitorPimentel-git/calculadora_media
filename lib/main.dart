@@ -114,6 +114,7 @@ class _MediaEscolarPageState extends State<MediaEscolarPage> {
 
   void limparCampos() {
       nomeController.clear();
+      frequenciaController.clear();
       nota1Controller.clear();
       nota2Controller.clear();
       nota3Controller.clear();
